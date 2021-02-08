@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="header-title">Takvim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel = "icon" href = "https://img.icons8.com/color/48/000000/mosque.png" type = "image/x-icon"> 
+</head>
+<body onload="setCity()">
+    <main>
+        <header class="header">
+            <div>
+                <p class="title"><span id="title-namaz">Namaz</span> <span id="title-time">Time</span></p>
+            </div>
+            <div class="location">
+                <a href="https://www.google.com/maps/@41.0314973,71.6775469,17.69z" target="blank"><img class="place-icon" src="place-icon.png" alt="place"></a>
+                <p id="current-city" class="current-city">
+                    <select name="city" id="cities" onchange="setCity()">
+                        <option class="city" value="namangan" id="namangan">Namangan</option>
+                        <option class="city" value="fargona" id="fargona">Fergana</option>
+                        <option class="city" value="andijon" id="andijon">Andijan</option>
+                        <option class="city" value="buxoro" id="buxoro">Bukhara</option>
+                        <option class="city" value="toshkent" id="toshkent">Tashkent</option>
+                        <option class="city" value="jizzax" id="jizzax">Jizzakh</option>
+                        <option class="city" value="xorazm" id="xorazm">Khorezm</option>
+                        <option class="city" value="navoiy" id="navoiy">Navoi</option>
+                        <option class="city" value="qashqadaryo" id="qashqadaryo">Kashkadarya</option>
+                        <option class="city" value="samarqand" id="samarqand">Samarkand</option>
+                        <option class="city" value="sirdaryo" id="sirdaryo">Syrdarya</option>
+                    </select>
+                </p> 
+                <select id="languages" onchange="setLang()">
+                    <option name="language" value="eng" id="eng"><a href="eng">ENG</a></option>
+                    <option name="language" value="rus" id="rus"><a href="arab">РУC</a></option>
+                    <option name="language" value="uzb" id="uzb"><a href="uzb">UZB</a></option>
+                </select>
+            </div>
+        </header>
+        <div class="quote-section">
+            <p id="quote-text">"Namozni to'kis ado etinglar, albatta namoz mo'minlarga vaqtida farz qilingandur! (Niso: 103)"</p>
+        </div>
+    </main>
+    <section class="takvim-section">
+        <section class="date-and-time">
+            <div>
+                <p id="local-time" class="current-time">
+                    00:00
+                </p>
+                <p class="current-date">
+                     <span id="current-date"></span>
+                </p>
+            </div>
+        </section>
+        <div class="namaz-sections">
+            <p id="fajr" class="namaz-name">
+                Fajr
+            </p>
+            <p class="namaz-time">
+                00:00
+            </p>
+        </div>
+        <div class="namaz-sections">
+            <p class="namaz-name">
+                Sunrise
+            </p>
+            <p class="namaz-time">
+                00:00
+            </p>
+        </div>
+        <div class="namaz-sections"> 
+            <p class="namaz-name">
+                Zuhr
+            </p>
+            <p class="namaz-time">
+                00:00
+            </p>
+        </div>
+        <div class="namaz-sections">
+            <p class="namaz-name">
+                Asr
+            </p>
+            <p class="namaz-time">
+                00:00
+            </p>
+        </div>
+        <div class="namaz-sections">
+            <p class="namaz-name">
+                Maghrib
+            </p>
+            <p class="namaz-time">
+                00:00
+            </p>
+        </div>
+        <div class="namaz-sections">
+            <p class="namaz-name">
+                Isha
+            </p>
+            <p class="namaz-time">
+                00:00
+            </p>
+        </div>
+    </section>
+    <section id="current-position">
+        <span id="long"></span>  <span id="lat"></span>
+    </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+</html>
